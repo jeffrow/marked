@@ -93,7 +93,7 @@ create.dm=function(x, formula, time.bins=NULL, cohort.bins=NULL, age.bins=NULL, 
 	   if(!vars[i]%in%colnames(x)) stop(paste("\n",vars[i]," variable used in formula, not found in data\n"))
 	   if(any(is.na(x[,vars[i]]))) stop (paste("\n",vars[i]," variable used in formula contains NA in data\n"))
    }
-   mm=model.matrix(formula,x[1:(nrow(x)/10),,drop=FALSE])
+   mm=model.matrix(formula,x[1:(nrow(x)),,drop=FALSE])
    npar=ncol(mm)
    nrows=nrow(x)
    upper=0
